@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AZList from "./components/AZList"; 
+import "./assets/styles.css"
+import { BrowserRouter,Route,Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import WatchPage from "./components/WatchPage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+      <Route path="/" element={ <HomePage/>}/>
+      <Route path="/AZlist" element={ <AZList/>}/>
+      <Route path="/WatchPage" element={<WatchPage/>}/>
+    </Routes>
+    <Footer/> 
+    </BrowserRouter>
+    
+    
+    
+     
+
+       
+    </>
   );
 }
 
